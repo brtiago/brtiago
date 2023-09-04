@@ -16,8 +16,8 @@ Here are some ideas to get you started:
 -->
 
 
-- 🔭 Estou atualmente trabalhando neste projeto: <a href="https://github.com/brtiago/pigz-app" target="_blank">Pigz APP</a>
-- 🌱 Tenho estudado React e Nextjs
+- 🔭 Estou atualmente trabalhando neste projeto: <a href="https://github.com/brtiago/estudo-spring-boot" target="_blank">Estudo Spring Boot</a>
+- 🌱 Tenho estudado a linguagem java
 #### 📫 Entre em contato: tgribeiro(arroba)gmail.com
 <div style="display: inline_block">
   <a href = "mailto:tgribeiro@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>

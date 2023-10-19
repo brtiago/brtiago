@@ -1,35 +1,14 @@
-### Oi eu sou o Tiago, sou desenvolvedor front-end react! 👋
+# Hi There! 👋
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgribeiro/)](https://www.linkedin.com/in/tgribeiro/)
+[![Gmail Badge](https://img.shields.io/badge/-tgribeiro@gmail.com-6633cc?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgribeiro@gmail.com)](mailto:tgribeiro@gmail.com)
 
-<!--
-**brtiago/brtiago** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img align="right" alt="Code Thinking image" src="./codeThinking.png"  width="300px"/>
 
-Here are some ideas to get you started:
+## My name is Tiago
+(Java | Spring Boot | Python | Docker | PostgreSQL | HTML | CSS | Tailwind CSS | Bootstrap)
+- 🌱 I’m currently learning Java and Spring Boot
+- 👯 I’m looking to collaborate on an opensource project
+- 🌐 Web Technologies: HTML, CSS, Tailwind CSS, Bootstrap
+- 📚 Interests: Web Development, Machine Dearning, Data Analysis
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-
-
-- 🔭 Estou atualmente trabalhando neste projeto: <a href="https://github.com/brtiago/estudo-spring-boot" target="_blank">Estudo Spring Boot</a>
-- 🌱 Tenho estudado a linguagem java
-#### 📫 Entre em contato: tgribeiro(arroba)gmail.com
-<div style="display: inline_block">
-  <a href = "mailto:tgribeiro@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/tgribeiro" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-</div>
-
-#### Conhecimentos em:
-<div style="display: inline_block">
-  <img align="center" alt="Tiago-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Tiago-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
-  <img align="center" alt="Tiago-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <img align="center" alt="Tiago-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Tiago-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Tiago-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-</div>
+[![Tiago top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=brtiago&theme=blue-white)](https://github.com/anuraghazra/github-readme-stats)

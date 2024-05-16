@@ -7,8 +7,7 @@
 ## My name is Tiago
 (Java | Spring Boot | Python | Docker | PostgreSQL | HTML | CSS | Tailwind CSS | Bootstrap)
 - 🌱 I’m currently learning Java and Spring Boot
-- 👯 I’m looking to collaborate on an opensource project
 - 🌐 Web Technologies: HTML, CSS, Tailwind CSS, Bootstrap
-- 📚 Interests: Web Development, Machine Dearning, Data Analysis
+- 📚 Interests: Web Development, Machine Learning, Data Analysis
 
 [![Tiago top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=brtiago&theme=blue-white)](https://github.com/anuraghazra/github-readme-stats)

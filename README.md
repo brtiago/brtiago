@@ -1,9 +1,12 @@
 # Hi There! I'm Tiago👋
 (Java | Spring Boot | Python | Docker | PostgreSQL | HTML | CSS | Tailwind CSS | Bootstrap)
 
-- 🌱 I’m currently learning Java and Spring Boot
+- 🧰 Main Tech Stack: Java 17, Spring Boot, PostgreSQL, Python
 - 🌐 Web Technologies: HTML, CSS, Tailwind CSS, Bootstrap
-- 📚 Interests: Java, Springboot, Spring AI, LLM, Web Developing
+- 🎯 Domain: Back-end
+- 🇺🇸 C1/C2 level English
+
+
 
 <img align="right" alt="Code Thinking image" src="./codeThinking.png"  width="300px"/>
 <div style="display: inline_block"><br>

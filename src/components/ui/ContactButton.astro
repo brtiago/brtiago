@@ -1,0 +1,129 @@
+---
+// src/components/EmailButton.astro
+
+// Tipagem explícita com TypeScript
+interface Props {
+  email: string;
+}
+
+// Desestruturação com validação
+const { email } = Astro.props;
+---
+
+<!-- Container principal -->
+<div class="relative group">
+  <!-- Botão visual -->
+  <div class="inline-flex items-center justify-center 
+              px-[60px] py-[40px] min-w-[300px] h-[140px]
+              text-5xl sm:text-7xl font-medium
+              bg-amber-500 hover:bg-amber-600 text-neutral-900
+              rounded-[30px] transition-all duration-300
+              hover:shadow-lg hover:shadow-amber-500/20
+              mx-auto max-w-full text-center scale-90 sm:scale-100
+              cursor-pointer email-button"
+              data-email={email}>
+    
+    <!-- Texto do botão que mudará dinamicamente -->
+    <span class="button-text">{email}</span>
+    
+    <!-- Tooltip hover (agora oculto por padrão) -->
+    <span class="tooltip absolute opacity-0 transition-opacity
+                -top-10 left-1/2 transform -translate-x-1/2
+                bg-neutral-800 text-white text-sm px-3 py-1 rounded-md
+                whitespace-nowrap pointer-events-none">
+      Click to copy
+    </span>
+  </div>
+
+  <!-- Feedback de cópia (mantido para compatibilidade, mas não usado) -->
+  <div id="copied-feedback" class="absolute -bottom-8 left-1/2 transform -translate-x-1/2
+                        opacity-0 transition-opacity duration-200
+                        text-amber-600 text-sm font-medium">
+    Copied!
+  </div>
+</div>
+
+<!-- Script de funcionalidade -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.email-button');
+    const buttonText = button?.querySelector('.button-text');
+    const tooltip = button?.querySelector('.tooltip');
+    
+    if (!button || !buttonText || !tooltip) return;
+    
+    const originalEmail = button.getAttribute('data-email');
+    if (!originalEmail) return; // Sair se não encontrar o email
+    
+    let isHovering = false;
+    let isCopying = false;
+    
+    // Função para mostrar "Click to copy" no hover
+    button.addEventListener('mouseenter', () => {
+      if (!isCopying) {
+        isHovering = true;
+        buttonText.textContent = 'Click to copy';
+        tooltip.classList.add('opacity-100');
+      }
+    });
+    
+    // Função para voltar ao email original quando sair do hover
+    button.addEventListener('mouseleave', () => {
+      if (!isCopying) {
+        isHovering = false;
+        buttonText.textContent = originalEmail;
+        tooltip.classList.remove('opacity-100');
+      }
+    });
+    
+    // Função para copiar e mostrar feedback
+    button.addEventListener('mousedown', async () => {
+      try {
+        isCopying = true;
+        
+        // Copiar para clipboard
+        await navigator.clipboard.writeText(originalEmail);
+        
+        // Mostrar "Copied!" no botão
+        buttonText.textContent = 'Copied!';
+        tooltip.classList.remove('opacity-100');
+        
+        // Voltar ao estado normal após 1.5s
+        setTimeout(() => {
+          isCopying = false;
+          if (isHovering) {
+            buttonText.textContent = 'Click to copy';
+            tooltip.classList.add('opacity-100');
+          } else {
+            buttonText.textContent = originalEmail;
+          }
+        }, 1500);
+        
+      } catch (err) {
+        console.error('Erro ao copiar:', err);
+        
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = originalEmail;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Mostrar feedback mesmo com fallback
+        buttonText.textContent = 'Copied!';
+        tooltip.classList.remove('opacity-100');
+        
+        setTimeout(() => {
+          isCopying = false;
+          if (isHovering) {
+            buttonText.textContent = 'Click to copy';
+            tooltip.classList.add('opacity-100');
+          } else {
+            buttonText.textContent = originalEmail;
+          }
+        }, 1500);
+      }
+    });
+  });
+</script>

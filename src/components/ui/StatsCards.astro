@@ -1,0 +1,42 @@
+---
+interface Props {
+    metrics?: {
+        yearsExperience?: string;
+        projectsCompleted?: string;
+        technologiesUsed?: string;
+        clientSatisfaction?: string;
+    } 
+}
+
+const { metrics = {} } = Astro.props;
+---
+<!-- Stats Cards -->
+<div class="grid grid-cols-2 gap-4">
+    {metrics && (
+        <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+        <div class="text-3xl font-bold text-amber-600 mb-2">{metrics.yearsExperience}</div>
+        <div class="text-sm font-medium text-neutral-700">Years Experience</div>
+        </div>
+    )}
+    
+    {metrics && (
+        <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+        <div class="text-3xl font-bold text-amber-600 mb-2">{metrics.projectsCompleted}</div>
+        <div class="text-sm font-medium text-neutral-700">Projects Completed</div>
+        </div>
+    )}
+    
+    {metrics && (
+        <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+        <div class="text-3xl font-bold text-amber-600 mb-2">{metrics.technologiesUsed}</div>
+        <div class="text-sm font-medium text-neutral-700">Technologies</div>
+        </div>
+    )}
+    
+    {metrics && (
+        <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+        <div class="text-3xl font-bold text-amber-600 mb-2">{metrics.clientSatisfaction}</div>
+        <div class="text-sm font-medium text-neutral-700">Client Satisfaction</div>
+        </div>
+    )}
+  </div>

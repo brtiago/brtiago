@@ -1,0 +1,56 @@
+[
+    {
+    "title": "E-commerce Platform",
+    "img" : "/projects/ecommerce.webp",
+    "desc": "Uma plataforma completa de e-commerce com carrinho de compras, sistema de pagamentos integrado e dashboard administrativo para gerenciamento de produtos e pedidos.",
+    "url":  "/projects/ecommerce",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
+    "githubUrl": "https://github.com/user/ecommerce",
+    "demoUrl": "https://ecommerce-demo.com"
+  },
+  {
+    "title": "Task Management App",
+    "img": "/projects/taskmanager.webp",
+    "desc": "Aplicativo de gerenciamento de tarefas com recursos de colaboração em equipe, cronogramas personalizáveis e integração com calendários.",
+    "url": "/projects/task-manager",
+    "technologies": ["Vue.js", "Express", "PostgreSQL", "Socket.io"],
+    "githubUrl": "https://github.com/user/task-manager",
+    "demoUrl": "https://taskmanager-demo.com"
+  },
+  {
+    "title": "Weather Dashboard",
+    "img": "/projects/weather.webp",
+    "desc": "Dashboard interativo de clima com previsões detalhadas, mapas meteorológicos e alertas personalizados para múltiplas localizações.",
+    "url": "/projects/weather-dashboard",
+    "technologies": ["React", "TypeScript", "OpenWeather API", "Chart.js"],
+    "githubUrl": "https://github.com/user/weather-dashboard",
+    "demoUrl": "https://weather-demo.com"
+  },
+  {
+    "title": "Social Media Analytics",
+    "img": "/projects/analytics.webp",
+    "desc": "Ferramenta de análise de redes sociais com métricas detalhadas, relatórios automatizados e insights baseados em inteligência artificial.",
+    "url": "/projects/social-analytics",
+    "technologies": ["Python", "Django", "React", "D3.js", "Redis"],
+    "githubUrl": "https://github.com/user/social-analytics",
+    "demoUrl": "https://analytics-demo.com"
+  },
+  {
+    "title": "Portfolio Website",
+    "img": "/projects/portfolio.webp",
+    "desc": "Website portfolio responsivo e moderno com animações suaves, otimização SEO avançada e sistema de gestão de conteúdo integrado.",
+    "url": "/projects/portfolio",
+    "technologies": ["Astro", "Tailwind", "TypeScript", "Sanity CMS"],
+    "githubUrl": "https://github.com/user/portfolio",
+    "demoUrl": "https://portfolio-demo.com"
+  },
+  {
+    "title": "API Gateway Service",
+    "img": "/projects/api-gateway.webp",
+    "desc": "Serviço de gateway API escalável com autenticação JWT, rate limiting, monitoramento em tempo real e documentação automática.",
+    "url": "/projects/api-gateway",
+    "technologies": ["Node.js", "Docker", "Redis", "JWT", "Swagger"],
+    "githubUrl": "https://github.com/user/api-gateway",
+    "demoUrl": "https://api-demo.com"
+  }
+]

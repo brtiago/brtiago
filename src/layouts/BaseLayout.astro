@@ -1,27 +1,21 @@
 ---
-import BaseHead from "../components/ui/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
-const {
-  title = 'SITE_TITLE',
-  description = 'SITE_DESCRIPTION',
-} = Astro.props;
+import BaseHead from "../components/ui/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer2.astro";
+import siteConfig from "../data/site-config.json";
+
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={siteConfig.title} description={siteConfig.description} />
   </head>
   <body class="min-h-screen flex flex-col">
-    <div class="bg-base-100 bg-amber-600 flex flex-col min-h-screen">
-      <div class="flex-1">
-        <main class="px-4 py-6 md:p-6 md:pt-10 w-full max-w-full mx-auto lg:max-w-[900px]">
-          <slot />
-        </main>
-      </div>
-
-      <Footer />
-    </div>
+    <Navbar />
+    <slot />
+    <Footer />
   </body>
 </html>

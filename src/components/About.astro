@@ -1,0 +1,147 @@
+---
+import Container from "./Container.astro";
+import TagCloud from "../components/ui/TagCloud.astro";
+import MyValues from "./ui/MyValues.astro";
+import siteConfig from "../data/site-config.json";
+---
+
+<section 
+  id="about" 
+  class="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100 px-6 py-16"
+  role="region" 
+  aria-label="About Section"
+>
+  <Container class="mx-auto w-full max-w-7xl">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      
+      <!-- Left Column - Main Content -->
+      <div class="space-y-8">
+        <header class="space-y-4">
+          <h2 class="text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+            About <span class="text-amber-600">Me</span>
+          </h2>
+          <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+        </header>
+
+        <div class="space-y-6 text-lg leading-relaxed text-neutral-800">
+          <p>
+            I'm a passionate <strong class="text-amber-600">{siteConfig.title}</strong> with expertise in 
+            building robust and scalable applications using Java and Spring Boot. My journey in software 
+            development spans several years, during which I've honed my skills in creating efficient 
+            RESTful APIs and implementing clean architecture patterns.
+          </p>
+          
+          <p>
+            I believe in writing <strong class="text-amber-600">clean, maintainable code</strong> that 
+            follows SOLID principles and industry best practices. My approach to development emphasizes 
+            automated testing, continuous integration, and delivering high-quality solutions that solve 
+            real-world problems.
+          </p>
+
+          <p>
+            When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
+            and sharing knowledge with the developer community. I'm always eager to take on new challenges 
+            and collaborate on innovative projects.
+          </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="pt-4">
+          <a
+            target="_blank" 
+            rel="noopener noreferrer"
+            href={`https://linkedin.com/${siteConfig.social.linkedin}`}
+            class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-lg font-semibold text-neutral-900 shadow-lg transition-all hover:scale-105 hover:bg-amber-600 hover:shadow-amber-500/20 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+          >
+            Let's Connect
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <path d="M7 17l9.2-9.2M17 17V7H7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column - Skills & Stats -->
+      <div class="space-y-8">
+        
+        <!-- Skills -->
+        <div class="rounded-2xl bg-white p-8 shadow-lg border border-amber-200">
+          <h3 class="text-2xl font-bold text-neutral-900 mb-6">
+            Core <span class="text-amber-600">Skills</span>
+          </h3>
+          
+          <!-- Primary Skills - Featured Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 p-4 text-white transition-all hover:scale-105 hover:shadow-lg">
+              <div class="flex items-center gap-3">
+                <div class="rounded-lg bg-white/20 p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold">{siteConfig.coreSkills.primaryExpertise}</h4>
+                  <p class="text-sm text-amber-100">Primary Expertise</p>
+                </div>
+              </div>
+              <div class="absolute -bottom-2 -right-2 text-6xl text-white/10 font-bold">J</div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 p-4 text-white transition-all hover:scale-105 hover:shadow-lg">
+              <div class="flex items-center gap-3">
+                <div class="rounded-lg bg-white/20 p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <circle cx="12" cy="12" r="4"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold">{siteConfig.coreSkills.advancedLevel}</h4>
+                  <p class="text-sm text-amber-100">Advanced Level</p>
+                </div>
+              </div>
+              <div class="absolute -bottom-2 -right-2 text-6xl text-white/10 font-bold">R</div>
+            </div>
+          </div>
+
+          <!-- Secondary Skills - Tag Cloud -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-semibold text-neutral-600 uppercase tracking-wide">Technologies & Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              <TagCloud technologies={siteConfig.coreSkills.technologiesAndTools}/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+            <div class="text-3xl font-bold text-amber-600 mb-2">{siteConfig.coreSkills.metrics.yearsExperience}</div>
+            <div class="text-sm font-medium text-neutral-700">Years Experience</div>
+          </div>
+          
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+            <div class="text-3xl font-bold text-amber-600 mb-2">{siteConfig.coreSkills.metrics.projectsCompleted}</div>
+            <div class="text-sm font-medium text-neutral-700">Projects Completed</div>
+          </div>
+          
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+            <div class="text-3xl font-bold text-amber-600 mb-2">{siteConfig.coreSkills.metrics.technologiesUsed}</div>
+            <div class="text-sm font-medium text-neutral-700">Technologies</div>
+          </div>
+          
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg border border-amber-200">
+            <div class="text-3xl font-bold text-amber-600 mb-2">{siteConfig.coreSkills.metrics.clientSatisfaction}</div>
+            <div class="text-sm font-medium text-neutral-700">Client Satisfaction</div>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 p-8 text-white shadow-lg">
+          <h3 class="text-xl font-bold mb-4">My Values</h3>
+          <MyValues values={siteConfig.coreSkills.values} />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

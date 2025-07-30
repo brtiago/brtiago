@@ -1,129 +1,132 @@
 ---
-// src/components/EmailButton.astro
-
-// Tipagem explícita com TypeScript
 interface Props {
   email: string;
 }
 
-// Desestruturação com validação
 const { email } = Astro.props;
 ---
 
-<!-- Container principal -->
 <div class="relative group">
   <!-- Botão visual -->
-  <div class="inline-flex items-center justify-center 
-              px-[60px] py-[40px] min-w-[300px] h-[140px]
-              text-5xl sm:text-7xl font-medium
-              bg-amber-500 hover:bg-amber-600 text-neutral-900
-              rounded-[30px] transition-all duration-300
-              hover:shadow-lg hover:shadow-amber-500/20
-              mx-auto max-w-full text-center scale-90 sm:scale-100
-              cursor-pointer email-button"
-              data-email={email}>
-    
-    <!-- Texto do botão que mudará dinamicamente -->
-    <span class="button-text">{email}</span>
-    
-    <!-- Tooltip hover (agora oculto por padrão) -->
-    <span class="tooltip absolute opacity-0 transition-opacity
-                -top-10 left-1/2 transform -translate-x-1/2
-                bg-neutral-800 text-white text-sm px-3 py-1 rounded-md
-                whitespace-nowrap pointer-events-none">
-      Click to copy
-    </span>
+  <div
+    class="inline-flex items-center justify-center
+        w-full min-w-[280px] min-h-[64px] h-auto py-4 px-6
+        text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium 
+        bg-amber-500 hover:bg-amber-600 text-neutral-900
+        rounded-2xl transition-all duration-200 ease-in-out
+        hover:shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02]
+        active:scale-[0.98] active:shadow-md active:bg-amber-700
+        mx-auto text-center
+        cursor-pointer email-button
+        box-border"
+    data-email={email}>
+
+    <!-- Texto do botão -->
+    <span
+      class="button-text break-all sm:break-normal leading-tight
+             transition-opacity duration-200 select-none"
+      >{email}</span>
+
+    <!-- Texto hover/touch (inicialmente oculto) -->
+    <span
+      class="hover-text break-normal leading-tight
+             opacity-0 absolute inset-0 flex items-center justify-center
+             transition-opacity duration-200 select-none pointer-events-none"
+      >Click to copy</span>
   </div>
 
-  <!-- Feedback de cópia (mantido para compatibilidade, mas não usado) -->
-  <div id="copied-feedback" class="absolute -bottom-8 left-1/2 transform -translate-x-1/2
-                        opacity-0 transition-opacity duration-200
-                        text-amber-600 text-sm font-medium">
-    Copied!
-  </div>
-</div>
+  <!-- Script de funcionalidade -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.querySelector(".email-button");
+      const buttonText = button?.querySelector(".button-text");
+      const hoverText = button?.querySelector(".hover-text");
 
-<!-- Script de funcionalidade -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const button = document.querySelector('.email-button');
-    const buttonText = button?.querySelector('.button-text');
-    const tooltip = button?.querySelector('.tooltip');
-    
-    if (!button || !buttonText || !tooltip) return;
-    
-    const originalEmail = button.getAttribute('data-email');
-    if (!originalEmail) return; // Sair se não encontrar o email
-    
-    let isHovering = false;
-    let isCopying = false;
-    
-    // Função para mostrar "Click to copy" no hover
-    button.addEventListener('mouseenter', () => {
-      if (!isCopying) {
-        isHovering = true;
-        buttonText.textContent = 'Click to copy';
-        tooltip.classList.add('opacity-100');
+      if (!button || !buttonText || !hoverText) {
+        console.error("Elementos não encontrados");
+        return;
       }
-    });
-    
-    // Função para voltar ao email original quando sair do hover
-    button.addEventListener('mouseleave', () => {
-      if (!isCopying) {
-        isHovering = false;
-        buttonText.textContent = originalEmail;
-        tooltip.classList.remove('opacity-100');
+
+      const originalEmail = button.getAttribute("data-email");
+      if (!originalEmail) {
+        console.error("Email não encontrado");
+        return;
       }
-    });
-    
-    // Função para copiar e mostrar feedback
-    button.addEventListener('mousedown', async () => {
-      try {
+
+      let isCopying = false;
+
+      // Função para mostrar "Click to copy"
+      function showClickToCopy() {
+        if (!isCopying) {
+          buttonText.style.opacity = "0";
+          hoverText.style.opacity = "1";
+          hoverText.textContent = "Click to copy";
+        }
+      }
+
+      // Função para mostrar email
+      function showEmail() {
+        if (!isCopying) {
+          buttonText.style.opacity = "1";
+          hoverText.style.opacity = "0";
+        }
+      }
+
+      // Função para mostrar "Copied!"
+      function showCopied() {
         isCopying = true;
-        
-        // Copiar para clipboard
-        await navigator.clipboard.writeText(originalEmail);
-        
-        // Mostrar "Copied!" no botão
-        buttonText.textContent = 'Copied!';
-        tooltip.classList.remove('opacity-100');
-        
-        // Voltar ao estado normal após 1.5s
-        setTimeout(() => {
-          isCopying = false;
-          if (isHovering) {
-            buttonText.textContent = 'Click to copy';
-            tooltip.classList.add('opacity-100');
-          } else {
-            buttonText.textContent = originalEmail;
-          }
-        }, 1500);
-        
-      } catch (err) {
-        console.error('Erro ao copiar:', err);
-        
-        // Fallback para navegadores mais antigos
-        const textArea = document.createElement('textarea');
-        textArea.value = originalEmail;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        // Mostrar feedback mesmo com fallback
-        buttonText.textContent = 'Copied!';
-        tooltip.classList.remove('opacity-100');
-        
-        setTimeout(() => {
-          isCopying = false;
-          if (isHovering) {
-            buttonText.textContent = 'Click to copy';
-            tooltip.classList.add('opacity-100');
-          } else {
-            buttonText.textContent = originalEmail;
-          }
-        }, 1500);
+        buttonText.style.opacity = "0";
+        hoverText.style.opacity = "1";
+        hoverText.textContent = "Copied!";
       }
+
+      // Desktop: Hover com mouse
+      button.addEventListener("mouseenter", showClickToCopy);
+      button.addEventListener("mouseleave", showEmail);
+
+      // Mobile: Touch para mostrar instrução
+      button.addEventListener("touchstart", function(e) {
+        if (!isCopying) {
+          showClickToCopy();
+          // Auto-hide após 2 segundos se não clicou
+          setTimeout(() => {
+            if (!isCopying) {
+              showEmail();
+            }
+          }, 2000);
+        }
+      });
+
+      // Click/Tap para copiar - funciona em ambos
+      button.addEventListener("click", async function(e) {
+        e.preventDefault();
+        if (isCopying) return;
+        
+        showCopied();
+
+        try {
+          await navigator.clipboard.writeText(originalEmail);
+        } catch (err) {
+          // Fallback para navegadores antigos
+          const textArea = document.createElement("textarea");
+          textArea.value = originalEmail;
+          textArea.style.position = "fixed";
+          textArea.style.left = "-9999px";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+        }
+
+        // Reset após 1.5 segundos
+        setTimeout(() => {
+          isCopying = false;
+          showEmail();
+        }, 1500);
+      });
+
+      console.log("✅ Email button inicializado");
     });
-  });
-</script>
+  </script>
+</div>

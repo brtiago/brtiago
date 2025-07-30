@@ -1,0 +1,63 @@
+{
+    "name": "Tiago",
+    "title": "Software Engineer",
+    "description": "Building robust and scalable applications with clean architecture, SOLID principles, and comprehensive testing strategies.",
+    "email": "tgribeiro@gmail.com",
+    "address": "Fortaleza, CE",
+    "social": {
+        "linkedin": "in/tgribeiro/",
+        "github": "brtiago",
+        "resume": "www.google.com"
+    },
+    "whatsapp": {
+        "number": "55859",
+        "message": "Olá! Gostaria de agendar uma conversa."
+    },
+    "images": {
+        "author": "https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-4.1.0&auto=format&fit=crop&w=1080&q=80"
+    },
+    "techstack": [
+        "Java 17+",
+        "Spring Boot",
+        "RESTful APIs",
+        "Python"
+    ],
+    "hero": {
+        "headline": "Backend Engineering Solutions",
+        "subheadline": "High-performance, scalable backend systems with Java ecosystem",
+        "cta_primary": "Contact Me",
+        "cta_secondary": "View Projects"
+    },
+    "seo": {
+        "keywords": "java developer, spring boot, backend engineer, microservices, cloud architecture, software engineer, java, rest apis, system design",
+        "image": "/images/tech-profile.jpg"
+    },
+
+    "coreSkills": {
+        "primaryExpertise": "Java & Spring Boot",
+        "advancedLevel": "RESTful APIs",
+        "technologiesAndTools": [
+          "Database Design",
+          "Test Automation",
+          "PostgreSQL",
+          "JUnit",
+          "Maven",
+          "Docker",
+          "Git",
+          "Microservices",
+          "SOLID Principles"
+        ],
+        "metrics": {
+          "yearsExperience": "1+",
+          "projectsCompleted": "50+",
+          "technologiesUsed": "15+",
+          "clientSatisfaction": "100%"
+        },
+        "values": [
+          "Clean & Maintainable Code",
+          "Continuous Learning",
+          "Team Collaboration",
+          "Problem Solving"
+        ]
+      }
+}

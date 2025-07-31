@@ -26,7 +26,9 @@
         "headline": "Backend Engineering Solutions",
         "subheadline": "High-performance, scalable backend systems with Java ecosystem",
         "cta_primary": "Contact Me",
-        "cta_secondary": "View Projects"
+        "url_primary": "https://www.linkedin.com/in/tgribeiro/",
+        "cta_secondary": "View Projects",
+        "url_secondary": "#projects"
     },
     "seo": {
         "keywords": "java developer, spring boot, backend engineer, microservices, cloud architecture, software engineer, java, rest apis, system design",
@@ -37,13 +39,15 @@
         "primaryExpertise": "Java & Spring Boot",
         "advancedLevel": "RESTful APIs",
         "technologiesAndTools": [
-          "Database Design",
-          "Test Automation",
+          "Java 17+",
           "PostgreSQL",
-          "JUnit",
-          "Maven",
           "Docker",
           "Git",
+          "Test Automation",
+          "JUnit",
+          "Python",
+          "Database Design",
+          "Maven",
           "Microservices",
           "SOLID Principles"
         ],

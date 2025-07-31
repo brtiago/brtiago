@@ -1,6 +1,7 @@
 ---
 const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();
+import siteConfig from "../../data/site-config.json";
 ---
 
 <footer class="bg-gray-900 dark:bg-black border-t border-gray-800 dark:border-gray-900">
@@ -9,7 +10,7 @@ const currentYear = new Date().getFullYear();
         <div class="flex flex-col md:flex-row justify-between items-center gap-8">
             <!-- Brand/Copyright -->
             <div class="text-center md:text-left">
-                <h3 class="text-lg font-semibold text-white mb-2">Tiago</h3>
+                <h3 class="text-lg font-semibold text-white mb-2">{siteConfig.name}</h3>
                 <p class="text-gray-400 text-sm">
                     © {currentYear} {lang === "en" 
                         ? "All rights reserved" 
@@ -22,7 +23,7 @@ const currentYear = new Date().getFullYear();
             <div class="flex items-center gap-3">
                 <!-- GitHub -->
                 <a
-                    href="https://github.com/username"
+                    href={`https://github.com/${siteConfig.social.github}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
@@ -35,7 +36,7 @@ const currentYear = new Date().getFullYear();
                 
                 <!-- LinkedIn -->
                 <a
-                    href="https://linkedin.com/in/username"
+                    href={`https://linkedin.com/${siteConfig.social.linkedin}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
@@ -49,7 +50,7 @@ const currentYear = new Date().getFullYear();
                 
                 <!-- Email -->
                 <a
-                    href="mailto:email@mail.com"
+                    href={`mailto:${siteConfig.email}`}
                     aria-label="Email"
                     class="w-10 h-10 rounded-lg bg-gray-800 dark:bg-gray-900 flex items-center justify-center hover:bg-amber-600 text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
                 >

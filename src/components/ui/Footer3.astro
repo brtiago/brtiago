@@ -1,6 +1,7 @@
 ---
 const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();
+import siteConfig from "../../data/site-config.json";
 ---
 
 <footer class="bg-amber-50 dark:bg-neutral-900 border-t border-amber-200 dark:border-neutral-700">
@@ -10,7 +11,7 @@ const currentYear = new Date().getFullYear();
             <!-- Brand/About Section -->
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-amber-600 dark:text-amber-400">
-                    Tiago
+                    {siteConfig.name}
                 </h3>
                 <p class="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed">
                     {lang === "en" 
@@ -57,7 +58,7 @@ const currentYear = new Date().getFullYear();
                 <div class="flex gap-3">
                     <!-- GitHub -->
                     <a
-                        href="https://github.com/username"
+                        href={`https://github.com/${siteConfig.social.github}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub"
@@ -70,7 +71,7 @@ const currentYear = new Date().getFullYear();
                     
                     <!-- LinkedIn -->
                     <a
-                        href="https://linkedin.com/in/username"
+                        href={`https://linkedin.com/${siteConfig.social.linkedin}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
@@ -81,23 +82,9 @@ const currentYear = new Date().getFullYear();
                             <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"/>
                         </svg>
                     </a>
-                    
-                    <!-- Twitter/X -->
-                    <a
-                        href="https://x.com/username"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Twitter/X"
-                        class="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-white text-neutral-600 dark:text-neutral-300 transition-all duration-200 hover:scale-110"
-                    >
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    
                     <!-- Email -->
                     <a
-                        href="mailto:email@mail.com"
+                        href={`mailto:${siteConfig.email}`}
                         aria-label="Email"
                         class="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-white text-neutral-600 dark:text-neutral-300 transition-all duration-200 hover:scale-110"
                     >

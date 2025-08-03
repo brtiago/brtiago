@@ -52,5 +52,86 @@
     "technologies": ["Node.js", "Docker", "Redis", "JWT", "Swagger"],
     "githubUrl": "https://github.com/user/api-gateway",
     "demoUrl": "https://api-demo.com"
+  },
+  {
+    "title": "E-commerce Platform",
+    "img" : "/projects/ecommerce.webp",
+    "desc": "Uma plataforma completa de e-commerce com carrinho de compras, sistema de pagamentos integrado e dashboard administrativo para gerenciamento de produtos e pedidos.",
+    "url":  "/projects/ecommerce",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
+    "githubUrl": "https://github.com/user/ecommerce",
+    "demoUrl": "https://ecommerce-demo.com"
+  },
+  {
+    "title": "Task Management App",
+    "img": "/projects/taskmanager.webp",
+    "desc": "Aplicativo de gerenciamento de tarefas com recursos de colaboração em equipe, cronogramas personalizáveis e integração com calendários.",
+    "url": "/projects/task-manager",
+    "technologies": ["Vue.js", "Express", "PostgreSQL", "Socket.io"],
+    "githubUrl": "https://github.com/user/task-manager",
+    "demoUrl": "https://taskmanager-demo.com"
+  },
+  {
+    "title": "Weather Dashboard",
+    "img": "/projects/weather.webp",
+    "desc": "Dashboard interativo de clima com previsões detalhadas, mapas meteorológicos e alertas personalizados para múltiplas localizações.",
+    "url": "/projects/weather-dashboard",
+    "technologies": ["React", "TypeScript", "OpenWeather API", "Chart.js"],
+    "githubUrl": "https://github.com/user/weather-dashboard",
+    "demoUrl": "https://weather-demo.com"
+  },
+  {
+    "title": "E-commerce Platform",
+    "img" : "/projects/ecommerce.webp",
+    "desc": "Uma plataforma completa de e-commerce com carrinho de compras, sistema de pagamentos integrado e dashboard administrativo para gerenciamento de produtos e pedidos.",
+    "url":  "/projects/ecommerce",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
+    "githubUrl": "https://github.com/user/ecommerce",
+    "demoUrl": "https://ecommerce-demo.com"
+  },
+  {
+    "title": "Task Management App",
+    "img": "/projects/taskmanager.webp",
+    "desc": "Aplicativo de gerenciamento de tarefas com recursos de colaboração em equipe, cronogramas personalizáveis e integração com calendários.",
+    "url": "/projects/task-manager",
+    "technologies": ["Vue.js", "Express", "PostgreSQL", "Socket.io"],
+    "githubUrl": "https://github.com/user/task-manager",
+    "demoUrl": "https://taskmanager-demo.com"
+  },
+  {
+    "title": "Weather Dashboard",
+    "img": "/projects/weather.webp",
+    "desc": "Dashboard interativo de clima com previsões detalhadas, mapas meteorológicos e alertas personalizados para múltiplas localizações.",
+    "url": "/projects/weather-dashboard",
+    "technologies": ["React", "TypeScript", "OpenWeather API", "Chart.js"],
+    "githubUrl": "https://github.com/user/weather-dashboard",
+    "demoUrl": "https://weather-demo.com"
+  },
+  {
+    "title": "E-commerce Platform",
+    "img" : "/projects/ecommerce.webp",
+    "desc": "Uma plataforma completa de e-commerce com carrinho de compras, sistema de pagamentos integrado e dashboard administrativo para gerenciamento de produtos e pedidos.",
+    "url":  "/projects/ecommerce",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
+    "githubUrl": "https://github.com/user/ecommerce",
+    "demoUrl": "https://ecommerce-demo.com"
+  },
+  {
+    "title": "Task Management App",
+    "img": "/projects/taskmanager.webp",
+    "desc": "Aplicativo de gerenciamento de tarefas com recursos de colaboração em equipe, cronogramas personalizáveis e integração com calendários.",
+    "url": "/projects/task-manager",
+    "technologies": ["Vue.js", "Express", "PostgreSQL", "Socket.io"],
+    "githubUrl": "https://github.com/user/task-manager",
+    "demoUrl": "https://taskmanager-demo.com"
+  },
+  {
+    "title": "Weather Dashboard",
+    "img": "/projects/weather.webp",
+    "desc": "Dashboard interativo de clima com previsões detalhadas, mapas meteorológicos e alertas personalizados para múltiplas localizações.",
+    "url": "/projects/weather-dashboard",
+    "technologies": ["React", "TypeScript", "OpenWeather API", "Chart.js"],
+    "githubUrl": "https://github.com/user/weather-dashboard",
+    "demoUrl": "https://weather-demo.com"
   }
 ]

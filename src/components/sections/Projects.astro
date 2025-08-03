@@ -2,7 +2,10 @@
 import Container from "../../layouts/Container.astro";
 import HorizontalCard from "../ui/Card.astro";
 import projects from "../../data/projects.json";
-import siteConfig from "../../data/site-config.json";
+
+// Limitar projetos baseado no tamanho da tela
+// Desktop: 6 projetos, Mobile: 3 projetos
+const limitedProjects = projects.slice(0, 6);
 ---
 
 <section id="projects" class="py-20 bg-white dark:bg-neutral-900">
@@ -22,8 +25,12 @@ import siteConfig from "../../data/site-config.json";
 
       <!-- Grid de Projects -->
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <div class="transform hover:-translate-y-2 transition-transform duration-300">
+        {limitedProjects.map((project, index) => (
+          <div 
+            class={`transform hover:-translate-y-2 transition-transform duration-300 ${
+              index >= 3 ? 'hidden md:block' : ''
+            }`}
+          >
             <HorizontalCard 
               title={project.title}
               img={project.img}
